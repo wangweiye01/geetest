@@ -1,6 +1,6 @@
 package cc.wangweiye.geetest.demo2;
 
-import cc.wangweiye.geetest.demo2.GeetestConfig;
+import cc.wangweiye.geetest.GeetestConfig;
 import cc.wangweiye.geetest.GeetestLib;
 import org.json.JSONException;
 import org.json.JSONObject;

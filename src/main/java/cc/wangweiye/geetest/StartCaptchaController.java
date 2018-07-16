@@ -4,21 +4,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.HashMap;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import cc.wangweiye.geetest.GeetestLib;
 
 @RestController
 
 public class StartCaptchaController {
     @RequestMapping("/gt/register1")
-    public void start(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String start(HttpServletRequest request) throws IOException {
 
         GeetestLib gtSdk = new GeetestLib(GeetestConfig.getGeetest_id(), GeetestConfig.getGeetest_key(),
                 GeetestConfig.isnewfailback());
@@ -43,7 +37,6 @@ public class StartCaptchaController {
 
         resStr = gtSdk.getResponseStr();
 
-        PrintWriter out = response.getWriter();
-        out.println(resStr);
+        return resStr;
     }
 }
